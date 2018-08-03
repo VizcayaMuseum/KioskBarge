@@ -573,6 +573,16 @@
             */
         }
 
+		setTimeout(function () {
+                    document.getElementById("finger_animation").style.display = "flex";
+                }, 1000);
+
+                window.onclick = function (event) {
+                    $("#finger_animation").fadeOut();
+                }
+                window.ontouchstart = function (event) {
+                    $("#finger_animation").fadeOut();
+        }
 
         /* Hotspots Control Dropup
         *****************************************************/
