@@ -205,7 +205,7 @@
 
         viewer.setEDLEnabled(false);
         viewer.setFOV(60);
-        viewer.setPointBudget(1 * 100 * 1000);
+        viewer.setPointBudget(5 * 1000 * 1000);
         document.title = "";
 
         viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
@@ -253,7 +253,7 @@
             let onError = function (xhr) { };
 
             let loader = new THREE.GLTFLoader(manager);
-            loader.load('https://s3.amazonaws.com/vizcaya/3dmodels/gltf/1917barge/scene.gltf', function (gltf) {
+            loader.load('http://localhost/vizcaya/3dmodels/gltf/1917barge/scene.gltf', function (gltf) {
                 /*
                 gltf.scene.traverse(function (child) {
                     if (child instanceof THREE.Mesh) {

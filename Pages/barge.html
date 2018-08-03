@@ -170,7 +170,7 @@
                 window.onkeypress = resetTimer;  //catches keyboard actions
 
                 function logout() {
-                    window.top.location.href = '../barge.html';  //Adapt to actual logout script
+                    location.reload();  //Adapt to actual logout script
                 }
                 function resetTimer() {
                     clearTimeout(t);
@@ -183,7 +183,7 @@
 
             viewer.setEDLEnabled(false);
             viewer.setFOV(60);
-            viewer.setPointBudget(1 * 100 * 1000);
+            viewer.setPointBudget(5 * 1000 * 1000);
             document.title = "";
 
             viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
@@ -203,7 +203,7 @@
             //let sceneLion = new Potree.Scene();
             viewer.setScene(sceneSG);
 
-            Potree.loadPointCloud("https://s3.amazonaws.com/vizcaya/pointclouds/barge/cloud.js", "barge", function (e) {
+            Potree.loadPointCloud("http://localhost/vizcaya/pointclouds/barge/cloud.js", "barge", function (e) {
 
                 sceneSG.addPointCloud(e.pointcloud);
                 sceneSG.view.position.set(-66.480,-7.513, 8.294);
@@ -244,7 +244,6 @@
                             sidebar.style.opacity = "1";
                         }
                     }
-
                 }
 
                 function popupSculptures() {
@@ -489,7 +488,7 @@
             }
 
             function goInactive() {
-                window.top.location.href = '../barge.html';
+                location.reload();
             }
 
             function goActive() {
@@ -514,18 +513,6 @@
                 var descriptions = document.getElementsByClassName("annotation-description");
                 var description = descriptions[annotationNum];
                 description.style.display = "none";
-                /*
-                var descriptions = document.getElementsByClassName("annotation-description");
-                var descriptLength = descriptions.length;
-
-                var index = descriptions.indexOf(annotationNum);
-                descriptions.splice(index, 1);
-
-                for (i = 0; i < descriptions.length; i++) {
-                    var description = descriptions[i];
-                    description.style.display = "none";
-                } 
-                */
             }
 
             //Functions for each annotation
@@ -620,40 +607,6 @@
             hideList('li3');
             hideList('li4');
             hideList('li5');
-
-            /*{   //Annotation (Example)
-                   let Mermaids = new Potree.Annotation({
-                       position: [-63.358, -51.438, -1.902],
-                       title: "MERMAIDS",
-                       cameraPosition: [-65.596, -53.536, -1.081],
-                       cameraTarget: [-44.362, -35.946, -6.132],
-                       description: `Much of the original detail of the Barge Mermaids has been lost over the past century due to storms and the subtropical environmental conditions. Depictions of aquatic life, real and imagined, are found throughout Vizcaya, including a group of “Merboy” sculptures located in the Fountain Garden. `,
-                   });
-                   Mermaids.domElement.off("mouseenter");
-                   Mermaids.domElement.off("mouseleave");
-                   Mermaids.addEventListener("click", () => {
-                       Mermaids.setHighlighted(!Mermaids.isHighlighted);
-                   });
-                   sceneSG.annotations.add(Mermaids);
-               }*/
-
-            /*// Herm point cloud in scene 2 (Example)
-                    Potree.loadPointCloud("https://s3.amazonaws.com/vizcaya/pointclouds/herm/cloud.js", "herm", function (e) {
-                        sceneSG2.addPointCloud(e.pointcloud);
-                        sceneSG2.view.position.set(40.480, -28.044, 52.055);
-                        sceneSG2.view.lookAt(new THREE.Vector3(-1.311, -0.328, 41.852));
-                        e.pointcloud.material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
-                        sceneSG2.addAnnotation([7.150, -0.112, 20.413], {
-                            "title": "Return to Barge",
-                            "actions": [{
-                                "icon": Potree.resourcePath + "/icons/goto-w.svg",
-                                "onclick": function () {
-                                    viewer.setScene(sceneSG);
-                                }
-                            }]
-                        });
-                    });*/
-
         }
 
         /* Navigation Controls Image

@@ -88,7 +88,7 @@
 
             viewer.setEDLEnabled(false);
             viewer.setFOV(60);
-            viewer.setPointBudget(1 * 100 * 1000);
+            viewer.setPointBudget(5 * 1000 * 1000);
             document.title = "";
             viewer.setEDLEnabled(false);
 
@@ -109,7 +109,7 @@
 
             viewer.setScene(sceneSG);
 
-            Potree.loadPointCloud("https://s3.amazonaws.com/vizcaya/pointclouds/herm/cloud.js", "pleasuresandperils", function (e) {
+            Potree.loadPointCloud("http://localhost/vizcaya/pointclouds/herm/cloud.js", "pleasuresandperils", function (e) {
 
                 sceneSG.addPointCloud(e.pointcloud);
                 sceneSG.view.position.set(48.582, -6.237, 52.951);
@@ -121,7 +121,7 @@
                 material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
 
             });
-
+			/*
             var timeoutID;
 
             function setup() {
@@ -160,7 +160,7 @@
 
                 startTimer();
             }
-
+			*/
             /*
             setTimeout(function () {
                 document.getElementById("gif_loader").style.display = "flex";

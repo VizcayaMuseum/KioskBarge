@@ -187,7 +187,7 @@
             window.onkeypress = resetTimer;  //catches keyboard actions
 
             function logout() {
-                window.top.location.href = '../barge.html';  //Adapt to actual logout script
+                location.reload(); //Adapt to actual logout script
             }
             function resetTimer() {
                 clearTimeout(t);
@@ -200,7 +200,7 @@
 
         viewer.setEDLEnabled(false);
         viewer.setFOV(60);
-        viewer.setPointBudget(1 * 100 * 1000);
+        viewer.setPointBudget(5 * 1000 * 1000);
         document.title = "";
 
         viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
@@ -220,7 +220,7 @@
         //let sceneLion = new Potree.Scene();
         viewer.setScene(sceneSG);
 
-        Potree.loadPointCloud("https://s3.amazonaws.com/vizcaya/pointclouds/barge/cloud.js", "barge", function (e) {
+        Potree.loadPointCloud("http://localhost/vizcaya/pointclouds/barge/cloud.js", "barge", function (e) {
 
             sceneSG.addPointCloud(e.pointcloud);
             sceneSG.view.position.set(-66.480,-7.513, 8.294);

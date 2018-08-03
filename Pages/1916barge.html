@@ -217,7 +217,7 @@
 
         viewer.setEDLEnabled(false);
         viewer.setFOV(60);
-        viewer.setPointBudget(1 * 100 * 1000);
+        viewer.setPointBudget(5 * 1000 * 1000);
         document.title = "";
 
         viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
@@ -265,7 +265,7 @@
             let onError = function (xhr) { };
 
             let loader = new THREE.GLTFLoader(manager);
-            loader.load('https://s3.amazonaws.com/vizcaya/3dmodels/gltf/1917barge/scene.gltf', function (gltf) {
+            loader.load('http://localhost/vizcaya/3dmodels/gltf/1917barge/scene.gltf', function (gltf) {
                 /*
                 gltf.scene.traverse(function (child) {
                     if (child instanceof THREE.Mesh) {
@@ -705,7 +705,7 @@
 
         /*
                 var fbxLoader = new THREE.FBXLoader();
-                fbxLoader.load('https://s3.amazonaws.com/vizcaya/3dmodels/fbx/hermes1917_3.fbx', function (object) {
+                fbxLoader.load('http://localhost/vizcaya/3dmodels/fbx/hermes1917_3.fbx', function (object) {
                     scene.position.set(0,0,0);
                     scene.scale.multiplyScalar(100);
                     scene.rotation.set(Math.PI / 2, Math.PI, 0)
@@ -728,7 +728,7 @@
         */
         /*
                 var gltfLoader = new THREE.GLTFLoader();
-                gltfLoader.load('https://s3.amazonaws.com/vizcaya/3dmodels/gltf/herm1917/scene.gltf', function (gltf) {
+                gltfLoader.load('http://localhost/vizcaya/3dmodels/gltf/herm1917/scene.gltf', function (gltf) {
                     sceneSG2.scene.position.set(0,0,0);
                     sceneSG2.scene.scale.multiplyScalar(100);
                     sceneSG2.scene.rotation.set(Math.PI / 2, Math.PI, 0)
@@ -745,7 +745,7 @@
                     });
                 });
 
-                gltfLoader.load('https://s3.amazonaws.com/vizcaya/3dmodels/gltf/1916mermaid/scene.gltf', function (gltf) {
+                gltfLoader.load('http://localhost/vizcaya/3dmodels/gltf/1916mermaid/scene.gltf', function (gltf) {
                     sceneSG4.scene.position.set(-10,0,-3500);
                     sceneSG4.scene.scale.multiplyScalar(100);
                     sceneSG4.scene.rotation.set(Math.PI / 2, Math.PI, 0)
