@@ -193,7 +193,11 @@
 
             function logout() {
                 window.top.location.href = '../1916barge.html';  //Adapt to actual logout script
-            }
+				//reset opacity of parent page
+				parentWin = window.parent;
+				var sidebar = parentWin.document.getElementById('split-container');
+				sidebar.style.opacity = "1";
+			}
             function resetTimer() {
                 clearTimeout(t);
                 t = setTimeout(logout, 300000);  // time is in milliseconds (1000 is 1 second)/

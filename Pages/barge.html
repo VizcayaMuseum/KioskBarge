@@ -171,6 +171,10 @@
 
                 function logout() {
                     location.reload();  //Adapt to actual logout script
+					//reset opacity of parent page
+					parentWin = window.parent;
+					var sidebar = parentWin.document.getElementById('split-container');
+					sidebar.style.opacity = "1";
                 }
                 function resetTimer() {
                     clearTimeout(t);
