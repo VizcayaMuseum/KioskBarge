@@ -94,7 +94,7 @@
                 <div id="prev" data-title="Previous Annotation" data-action="prev-annotation">
                     <div id="prevDiv"><img id="prevIcon" src="../images/caret-left.svg" /></div>
                 </div>
-                <div id="hotspots" class="hotspot-name" data-action="toggle-annotation-list">Toque Para Explorar</div>
+                <div id="hotspots" class="hotspot-name" data-action="toggle-annotation-list"><b id="hotspotName">Toque Para Explorar</b></div>
                 <div id="next" data-title="Next Annotation" data-action="next-annotation">
                     <div id="nextDiv"><img id="nextIcon" src="../images/caret-right.svg" /></div>
                 </div>
@@ -317,6 +317,7 @@
                                                 </span>
                                             `);
                     elTitle.find("img[name=action_set_scene]").click((event) => {
+						changeHotspotName("Centro de la Barcaza");
                     });
                     elTitle.toString = () => "CENTRO DE LA BARCAZA";
 
@@ -341,6 +342,7 @@
                                                         style="filter: invert(1);" />
                                                 </span>`);
                     elTitle.find("img[name=action_set_scene]").click((event) => {
+						changeHotspotName("Grutesco");
                     });
                     elTitle.toString = () => "GROTESQUES";
 
@@ -365,6 +367,7 @@
                                                     style="filter: invert(1);" />
                                             </span>`);
                     elTitle.find("img[name=action_set_scene]").click((event) => {
+						changeHotspotName("Herma");
                         popupHerm();
                         /*event.stopPropagation();*/
                         /*viewer.setScene(sceneSG2);*/
@@ -392,7 +395,8 @@
                                                         style="filter: invert(1);" />
                                                 </span>`);
                     elTitle.find("img[name=action_set_scene]").click((event) => {
-                        popupSculptures();
+						changeHotspotName("Esculturas");          
+						popupSculptures();
 
                     });
                     elTitle.toString = () => "SCULPTURES";
@@ -417,6 +421,7 @@
                                                     style="filter: invert(1);" />
                                             </span>`);
                     elTitle.find("img[name=action_set_scene]").click((event) => {
+						changeHotspotName("Sirenas");
                     });
                     elTitle.toString = () => "MERMAIDS";
 
@@ -549,11 +554,13 @@
 
         //Functions for each annotation
         function item1() {
+			changeHotspotName("Grotescos");
             sceneSG.annotations.children[1].moveHere(sceneSG.camera);
             showDescription(1);
             hideDescription(4);
         }
         function item2() {
+			changeHotspotName("Herma");
             sceneSG.annotations.children[2].moveHere(sceneSG.camera);
             hideDescription(1);
             hideDescription(4);
@@ -564,16 +571,19 @@
             */
         }
         function item3() {
+			changeHotspotName("Esculturas");
             sceneSG.annotations.children[3].moveHere(sceneSG.camera);
             hideDescription(1);
             hideDescription(4);
         }
         function item4() {
+			changeHotspotName("Sirenas");
             sceneSG.annotations.children[4].moveHere(sceneSG.camera);
             showDescription(4);
             hideDescription(1);
         }
         function item5() {
+			changeHotspotName("Centro de la Barcaza");
             sceneSG.annotations.children[0].moveHere(sceneSG.camera);
             hideDescription(4);
             hideDescription(1);
