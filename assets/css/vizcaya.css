@@ -1237,8 +1237,8 @@ a {
     width: auto;
     position: absolute;
 	top: 57%;
-	left: 26%;
-    z-index: 100;
+	left: 18%;
+    z-index: 4;
 }
 
 @keyframes mapAnimation {
