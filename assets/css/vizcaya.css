@@ -1442,7 +1442,7 @@ a {
     position: absolute;
     z-index: 4;
     top: 11%;
-	left: 23%;
+	left: 23.5%;
 }
 
 #barge_marker_img {
@@ -1451,7 +1451,7 @@ a {
     position: absolute;
     z-index: 4;
 	top: 11%;
-	left: 23%;
+	left: 23.5%;
 	animation: mapAnimation 1s ease-in-out infinite alternate;
     -webkit-animation-name: mapAnimation;
     animation-name: mapAnimation;
